@@ -265,7 +265,6 @@ impl Schematic {
     }
 }
 
-#[allow(unreachable_code)]
 pub fn run() -> String {
     let mut answer_1 = String::new();
     let mut answer_2 = String::new();
