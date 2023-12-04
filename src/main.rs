@@ -2,8 +2,8 @@ mod days;
 pub mod helpers;
 
 fn main() {
-    println!("Day 1   ---> {} ✅", days::day1::run());
-    println!("Day 2   ---> {} ❌", days::day2::run());
+    println!("Day 1   ---> {} 🌟🌟", days::day1::run());
+    println!("Day 2   ---> {} 🌟🌟", days::day2::run());
     println!("Day 3   ---> {} 🎄", days::day3::run());
     println!("Day 4   ---> {} 🎄", days::day4::run());
     println!("Day 5   ---> {} 🎄", days::day5::run());
