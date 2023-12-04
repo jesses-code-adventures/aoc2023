@@ -1,4 +1,4 @@
-use serde_json;
+use crate::helpers::get_data_as_array;
 
 static NUMBER_SUBSTRINGS: [&str; 9] = [
     "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
@@ -108,17 +108,6 @@ impl Into<&str> for WordsToNumbers {
     }
 }
 
-fn get_data() -> Vec<String> {
-    let data = include_str!("../data/day1.json");
-    let json: serde_json::Value = serde_json::from_str(data).unwrap();
-    json.as_array()
-        .unwrap()
-        .to_vec()
-        .iter()
-        .map(|x| x.to_string())
-        .collect::<Vec<String>>()
-}
-
 fn get_number_from_first_and_last_digit(word: &str) -> usize {
     let digits: Vec<char> = word.chars().filter(|c| c.is_numeric()).collect();
     let first = digits[0];
@@ -155,8 +144,8 @@ fn replace_words_with_digits(word: &str) -> String {
     resp
 }
 
-pub fn day1() {
-    let input_data = get_data();
+pub fn run() -> String {
+    let input_data = get_data_as_array("./data/day1.json".to_string());
     let output_numbers: Vec<usize> = input_data
         .iter()
         .map(|string| {
@@ -169,5 +158,5 @@ pub fn day1() {
     for number in output_numbers {
         total += number;
     }
-    println!("{:?}", total);
+    format!("{:?}", total)
 }
