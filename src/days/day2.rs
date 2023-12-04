@@ -1,5 +1,4 @@
 use crate::helpers::get_data_as_array;
-use std::process::exit;
 
 #[derive(Debug)]
 struct Game {
@@ -137,7 +136,6 @@ impl GameSubset {
     }
 }
 
-#[allow(unreachable_code)]
 pub fn run() -> String {
     let data = get_data_as_array("./data/day2.json".to_string());
     let mut p1_total = 0;
